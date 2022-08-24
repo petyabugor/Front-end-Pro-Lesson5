@@ -43,13 +43,15 @@ console.log(findVowels(exercise3))
 
 
 //4)
-function CreateUser(role, name) {
-    this.role = role;
-    this.name = name;
+function createUser(role, name) {
+    const newUser = {
+        role,
+        name,
+    };
+    return newUser;
   }
   
-let user = new CreateUser('admin','Bob');
-console.log(user)
+console.log(createUser('admin', 'Bob'))
 
 
 //5)
@@ -68,8 +70,8 @@ console.log(qqq(exercise5))
 //6)
 let exercise6=[1,2,3,4,NaN, 0, 5, 10]
 function showEvenAdd(elem){
-    let b= exercise6.filter(number=>number % 2 === 0).length
-    let c= exercise6.filter(number=> number % 2 !== 0).length
+    let b= elem.filter(number=>number % 2 === 0).length
+    let c= elem.filter(number=> number % 2 !== 0).length
     let e =  `even: ${b}, odd: ${c}`;
     return e
 }
@@ -89,7 +91,8 @@ console.log(convert(1000))
 //8)
 let exercise8= 'hello world' 
 function insertSpaces(aString) {
-    return aString.split("").join(" ");
+    a = aString.split(" ").join("");
+    return a.split("").join(" ");
 }
 
 console.log(insertSpaces(exercise8))
@@ -105,14 +108,10 @@ console.log(getSeconds(exercise9))
 
 
 //10)
-let exercise10= 'hello world, 3'
 
-function trim(text){
-let sliced = text.slice(0,3);
-if (sliced.length < text.length) {
-    sliced += '...';
-}
+function trim(text, number){
+    let sliced = `${text.slice(0,3,number)}...`;
     return sliced
 }
-console.log(trim(exercise10))
+console.log(trim('hello world', 3))
 
